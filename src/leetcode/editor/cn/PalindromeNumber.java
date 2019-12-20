@@ -1,4 +1,4 @@
-  //判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 
+//判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 //
 // 示例 1: 
 //
@@ -24,20 +24,37 @@
 //
 // 你能不将整数转为字符串来解决这个问题吗？ 
 // Related Topics 数学
-  
-  package leetcode.editor.cn;
-  public class PalindromeNumber{
-      public static void main(String[] args) {
-           Solution solution = new PalindromeNumber().new Solution();
-      }
-      
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isPalindrome(int x) {
-        
+package leetcode.editor.cn;
+
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        Solution solution = new PalindromeNumber().new Solution();
+        System.out.println(solution.isPalindrome(121));
     }
-}
+
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isPalindrome(int x) {
+            //1.先判断是否为0
+            if (x == 0) {
+                return true;
+            }
+            //2.转为字符串
+            String str = String.valueOf(x);
+            char[] chars = str.toCharArray();
+            //取中位数
+            int mid = chars.length / 2;
+            for (int i = 0; i < mid; i++) {
+                if (chars[i] != chars[chars.length - i - 1]) {
+                    return false;
+
+                }
+            }
+            return true;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

@@ -1,4 +1,4 @@
-  //给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。 
+//给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
 //
 // '.' 匹配任意单个字符
 //'*' 匹配零个或多个前面的那一个元素
@@ -56,20 +56,21 @@
 //p = "mis*is*p*."
 //输出: false 
 // Related Topics 字符串 动态规划 回溯算法
-  
-  package leetcode.editor.cn;
-  public class RegularExpressionMatching{
-      public static void main(String[] args) {
-           Solution solution = new RegularExpressionMatching().new Solution();
-      }
-      
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isMatch(String s, String p) {
-        
+package leetcode.editor.cn;
+
+public class RegularExpressionMatching {
+    public static void main(String[] args) {
+        Solution solution = new RegularExpressionMatching().new Solution();
     }
-}
+
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isMatch(String s, String p) {
+            return false;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}
