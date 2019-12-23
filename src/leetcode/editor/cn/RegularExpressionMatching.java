@@ -62,13 +62,24 @@ package leetcode.editor.cn;
 public class RegularExpressionMatching {
     public static void main(String[] args) {
         Solution solution = new RegularExpressionMatching().new Solution();
+        boolean match = solution.isMatch("ab", "*");
+        System.out.println(match);
     }
 
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        //递归
         public boolean isMatch(String s, String p) {
-            return false;
+            if (p.isEmpty()) return s.isEmpty();
+            //第一个字符是否匹配
+            boolean match = (!s.isEmpty()) && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
+            //如果p[1]为'*',做以下处理
+            if (p.length() >= 2 && p.charAt(1) == '*') {
+                //忽略模式串中带星号的这一部分，或者删除匹配串的第一个字符
+                return (isMatch(s, p.substring(2)) || (match && isMatch(s.substring(1), p)));
+            }
+            return match && isMatch(s.substring(1), p.substring(1));
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
